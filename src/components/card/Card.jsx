@@ -109,23 +109,25 @@ export default function Card({
                         </Grid>
                         <Grid item xs={6} justifyContent="flex-end">
                             <div className={classNames(styles.likes)}>
-                                <Chip className={classNames(styles.likes)}
-                                    startIcon={<Favorite />}
-                                    label={millify(likes)} 
-                                    variant="outlined"
-                                    color="primary"
+                            <Button
                                     sx={{
-                                    padding: 0.5, 
-                                    color: "#24f25e",
-                                    border: "3px solid #24f25e",
-                                    backgroundColor: "#232336",
-                                    fontFamily: "Montserrat",
-                                    fontStyle: "normal",
-                                    fontWeight: 700,
-                                    fontSize: "1rem",
-                                    lineHeight: "1rem",
-                                }}
-                                    />
+                                        padding: 0.6,
+                                        width: 1,
+                                        color: "#24f25e",
+                                        border: "1px solid #24f25e",
+                                        backgroundColor:
+                                            "rgba(36, 242, 94, 0.1)",
+                                        fontFamily: "Montserrat",
+                                        fontStyle: "normal",
+                                        fontWeight: 700,
+                                        fontSize: "1rem",
+                                        lineHeight: "1rem",
+                                    }}
+                                    variant="outlined"
+                                    startIcon={<Favorite />}
+                                >
+                                    {millify(likes)}
+                                </Button>
                             </div>
                         </Grid>
                     </Grid>
