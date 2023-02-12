@@ -3,7 +3,8 @@ import styles from "./Card.module.scss";
 import classNames from "classnames";
 import millify from "millify";
 import Countdown from "react-countdown";
-import { default as MuiCard } from "@mui/material/Card";
+// import { default as MuiCard } from "@mui/material/Card";
+import Card from '@mui/material/Card';
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -32,7 +33,7 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
     }
 };
 
-export default function Card({
+export default function CardComponent({
     name = "",
     likes = 0,
     mediaUrl = "",
@@ -50,8 +51,10 @@ export default function Card({
     }, []);
 
     return (
-        <MuiCard
-            className={classNames(styles.card)}
+ 
+        <Card
+        className={classNames(styles.badge)}
+            // className={classNames(styles.card)}
             sx={{
                 maxWidth: 325,
                 borderRadius: 0.5,
@@ -72,7 +75,7 @@ export default function Card({
                 subheader=""
             />
             {time !== 0 ? (
-                <div className={classNames(styles.badge)}>
+                <div >
                     <CircleIcon
                         sx={{
                             color: "#181828",
@@ -133,7 +136,7 @@ export default function Card({
                     </Grid>
                 </Box>
             </CardContent>
-        </MuiCard>
+        </Card> 
     );
 }
  
